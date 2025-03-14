@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Deegan 38 </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1> The hailie Deegan experience </h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li id="membershipLink" style="display: none;"><a href="membership.html">Membership</a></li>
+            <li id="loginLink"><a href="login.html">Login</a></li>
+            <li id="logoutLink" style="display: none;"><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="welcomeSection">
+    <h2 id="welcomeMessage">Welcome to the hailie deegan experience!</h2>
+</section>
+
+<section class="merch-section">
+    <div class="merch-container">
+        <img src="../images/hailiepicture1.jpeg"  alt="Hailey Deegan" width="400">
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let membershipLink = document.getElementById("membershipLink");
+        let loginLink = document.getElementById("loginLink");
+        let logoutLink = document.getElementById("logoutLink");
+        let welcomeMessage = document.getElementById("welcomeMessage");
+
+        let loggedInUser = localStorage.getItem("loggedInUser");
+
+        if (loggedInUser) {
+            membershipLink.style.display = "inline"; 
+            loginLink.style.display = "none"; 
+            logoutLink.style.display = "inline";
+            welcomeMessage.textContent = `Welcome back, ${loggedInUser}!`;
+        } else {
+            membershipLink.style.display = "none"; 
+            loginLink.style.display = "inline"; 
+            logoutLink.style.display = "none";
+            welcomeMessage.textContent = "Welcome to the hailie deegan experience !";
+        }
+    });
+
+    function logout() {
+        localStorage.removeItem("loggedInUser");
+        window.location.href = "index.html";
+    }
+</script>
+
+<footer>
+    <p>© 2025 Shop with Deegan. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

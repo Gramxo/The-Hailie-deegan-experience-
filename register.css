@@ -1,0 +1,111 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Header Styling */
+header {
+  background-color: #222;
+  color: white;
+  padding: 20px 0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+/* Registration Form Container */
+.auth-form {
+  background-color: white;
+  width: 300px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Registration Form Headings */
+.auth-form h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Elements */
+.auth-form form input[type="text"],
+.auth-form form input[type="email"],
+.auth-form form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+/* Placeholder Styling */
+.auth-form form input::placeholder {
+  color: #999;
+}
+
+/* Button Styles */
+.auth-form form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #000; /* Black background for button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.auth-form form button:hover {
+  background-color: #333;
+}
+
+/* Registration Message */
+#regMessage {
+  margin-top: 15px;
+  font-size: 1.1em;
+  color: green;
+}
+
+/* Additional Text (Login link) */
+.auth-form p {
+  margin-top: 15px;
+  font-size: 0.9em;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #222;
+  color: white;
+  padding: 15px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.9em;
+}

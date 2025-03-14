@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Confirmation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Shop with Deegan</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="confirmation-section">
+    <h2>Wait for Confirmation</h2>
+    <p>Your payment is being processed. Please wait for confirmation.</p>
+    <h3>Time Remaining: <span id="countdown">20:00</span></h3>
+</section>
+
+<script>
+    function startCountdown(duration, display) {
+        let timer = duration, minutes, seconds;
+        setInterval(function () {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.textContent = minutes + ":" + seconds;
+
+            if (--timer < 0) {
+                display.textContent = "Time Expired! Contact Support if not confirmed.";
+            }
+        }, 1000);
+    }
+
+    window.onload = function () {
+        let countdownElement = document.getElementById("countdown");
+        let countdownDuration = 20 * 60; // 20 minutes in seconds
+        startCountdown(countdownDuration, countdownElement);
+    };
+</script>
+
+<footer>
+    <p>© 2025 Shop with Deegan. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

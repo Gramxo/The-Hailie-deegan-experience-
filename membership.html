@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership | Shop with Deegan</title>
+    <link rel="stylesheet" href="membership.css">
+</head>
+<body>
+
+<header>
+    <h1>Shop with Deegan</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li id="logoutLink"><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+    if (!localStorage.getItem("loggedInUser")) {
+        alert("You must be logged in to access this page.");
+        window.location.href = "login.html";
+    }
+</script>
+
+<section class="membership-section">
+    <h2>Become a VIP Member</h2>
+    <p>Get exclusive access to Hailey Deegan’s latest merch, content, and events.</p>
+   <div class="membership-card">
+    <b>Purcase the membership card for :
+    $625<b>
+   
+        <p>Meet-and-Greet Opportunities</p>
+<hr>
+        <p>Invitations to exclusive VIP events, private concerts or fan club gatherings</p>
+<hr>
+        <p>Exclusive Merchandise</p>
+<hr>
+
+ <button id="joinNowBtn">Join Now</button>
+</section>
+</div>
+
+<section id="paymentSection" class="hidden">
+    <h2>Complete Your Payment</h2>
+    <p><b> Payment Method:</b>></p>
+    
+    <div class="payment-options">
+        <p>🔗Pay via bitcoin </p>
+        <p>📱 Scan QR Code:</p>
+        <img src="../images/bitcoinaddress.jpeg" alt="Payment QR Code" width="200">
+        <p>₿ Bitcoin Address: <strong>3DPqMfHBmqJurpM1XzpX3EtntNj6popA62</strong></p>
+    </div>
+   <button id="confirmPaymentBtn">Click here if you have made payment</button>
+</section>
+
+<script>
+    document.getElementById("joinNowBtn").addEventListener("click", function () {
+        let paymentSection = document.getElementById("paymentSection");
+        paymentSection.style.display = "block";
+        paymentSection.classList.add("fade-in");
+    });
+
+    document.getElementById("confirmPaymentBtn").addEventListener("click", function () {
+        window.location.href = "confirmation.html";
+    });
+
+    function logout() {
+        localStorage.removeItem("loggedInUser");
+        window.location.href = "index.html";
+    }
+</script>
+
+<footer>
+    <p>© 2025 Shop with Deegan. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
