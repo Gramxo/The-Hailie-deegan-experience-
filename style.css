@@ -12,6 +12,11 @@ header {
     padding: 10px 0;
 }
 
+div img {
+    position:absolute;
+        
+}
+
 nav ul {
     list-style: none;
     padding: 0;
