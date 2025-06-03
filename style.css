@@ -12,11 +12,11 @@ header {
     padding: 10px 0;
 }
 
-div img {
-    position: relative;
-    height: 400;
-    width: 400:
-    opacity: 0.5;
+.merch-container img{
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
         
 }
 
