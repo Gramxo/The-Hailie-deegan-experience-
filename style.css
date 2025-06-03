@@ -13,6 +13,8 @@ header {
 }
 
 .merch-container img{
+    width: 400px;
+    height:400px;
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
