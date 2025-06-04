@@ -13,6 +13,8 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
+                  <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
             <li id="membershipLink" style="display: none;"><a href="membership.html">Membership</a></li>
             <li id="loginLink"><a href="login.html">Login</a></li>
             <li id="logoutLink" style="display: none;"><a href="#" onclick="logout()">Logout</a></li>
@@ -26,8 +28,16 @@
 
 <section class="merch-section">
     <div class="merch-container">
-        <img src="hailiepicture1.jpeg"  alt="Hailey Deegan" width="400">
-        <img src="track.jpg" alt= "Deegan" width="400" id="img2">
+        <div class="slider-wrapper">
+            <div class="slider">
+                <img src="hailiepicture1.jpeg" alt="Hailey Deegan" class="slide active">
+                <img src="track.jpg" alt="Deegan on Track" class="slide">
+            </div>
+            <div class="slider-nav">
+                <button class="slider-button active"></button>
+                <button class="slider-button"></button>
+            </div>
+        </div>
     </div>
 </section>
     <section id="about" class="content-section">
