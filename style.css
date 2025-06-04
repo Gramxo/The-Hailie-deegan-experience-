@@ -103,6 +103,175 @@ nav a:hover {
   backdrop-filter: blur(5px); /* Frosted glass effect */
 }
 
+/* Slider Styles */
+.merch-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    transform: translateX(100%);
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 1;
+}
+
+.slide:not(.active) {
+    transform: translateX(-100%);
+}
+
+/* Slider Navigation */
+.slider-nav {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+}
+
+.slider-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider-button.active {
+    background-color: var(--primary);
+}
+
+.slider-button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* About and Contact Section Styles */
+.content-section {
+    padding: 3rem 2rem;
+    margin: 2rem auto;
+    max-width: 1000px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.content-section h2 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-family: var(--font-accent);
+}
+
+.about-content p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.contact-content {
+    text-align: center;
+}
+
+.contact-content ul {
+    list-style: none;
+    margin: 1.5rem 0;
+}
+
+.contact-content li {
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.contact-content a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-content a:hover {
+    text-decoration: underline;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.social-icon {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    background-color: var(--secondary);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .content-section {
+        padding: 2rem 1rem;
+        margin: 1rem;
+    }
+    
+    .social-media {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .slider-wrapper {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-wrapper {
+        height: 200px;
+    }
+}
+
 #welcomeMessage {
   font-size: 2.2rem;
   margin-bottom: 1rem;
