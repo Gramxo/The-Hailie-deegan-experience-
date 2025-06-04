@@ -1,111 +1,178 @@
-/* Global Styles */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f8f8;
+/* Global Styles & Variables */
+:root {
+  --primary: #e63946;       /* Vibrant red for brand color */
+  --primary-dark: #c1121f;  /* Darker red for hover states */
+  --secondary: #1d3557;     /* Deep navy blue */
+  --light: #f8f9fa;         /* Light background */
+  --dark: #212529;          /* Dark text color */
+  --gray: #6c757d;          /* Medium gray */
+  --light-gray: #e9ecef;    /* Light gray for borders */
+  --white: #ffffff;         /* Pure white */
+  
+  --font-main: 'Segoe UI', Roboto, -apple-system, sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
+  
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+  
+  --transition: all 0.3s ease;
+  --radius: 8px;
+}
+
+/* Base Reset & Typography */
+* {
   margin: 0;
   padding: 0;
-  text-align: center;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  line-height: 1.6;
+  color: var(--dark);
+  background-color: var(--light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
 }
 
 /* Header Styling */
 header {
-  background-color: #222;
-  color: white;
-  padding: 20px 0;
+  background-color: var(--secondary);
+  color: var(--white);
+  padding: 1.5rem 0;
+  box-shadow: var(--shadow-sm);
 }
 
 header h1 {
   margin: 0;
-  font-size: 2em;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
 }
 
-header nav ul {
+nav ul {
   list-style: none;
-  margin: 10px 0;
+  margin: 1rem 0 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
-header nav ul li {
-  display: inline-block;
-  margin: 0 15px;
+nav ul li {
+  margin: 0;
 }
 
-header nav ul li a {
-  color: white;
+nav a {
+  color: var(--white);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
   text-decoration: none;
-  font-size: 1em;
 }
 
-/* Registration Form Container */
+/* Auth Form Container */
 .auth-form {
-  background-color: white;
-  width: 300px;
-  margin: 50px auto;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--white);
+  width: 100%;
+  max-width: 400px;
+  margin: 3rem auto;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  animation: fadeIn 0.5s ease-out;
 }
 
-/* Registration Form Headings */
 .auth-form h2 {
-  margin-bottom: 20px;
-  color: #333;
+  margin-bottom: 1.5rem;
+  color: var(--secondary);
+  font-size: 1.75rem;
 }
 
 /* Form Elements */
-.auth-form form input[type="text"],
-.auth-form form input[type="email"],
-.auth-form form input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1em;
+.auth-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
-/* Placeholder Styling */
-.auth-form form input::placeholder {
-  color: #999;
+.auth-form input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.2);
+}
+
+.auth-form input::placeholder {
+  color: var(--gray);
+  opacity: 0.7;
 }
 
 /* Button Styles */
-.auth-form form button {
+.auth-form button {
   width: 100%;
-  padding: 10px;
-  background-color: #000; /* Black background for button */
-  color: white;
+  padding: 0.8rem;
+  background-color: var(--primary);
+  color: var(--white);
   border: none;
-  border-radius: 5px;
-  font-size: 1em;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  margin-top: 10px;
+  transition: var(--transition);
+  margin-top: 0.5rem;
 }
 
-.auth-form form button:hover {
-  background-color: #333;
+.auth-form button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
-/* Registration Message */
+/* Messages & Additional Text */
 #regMessage {
-  margin-top: 15px;
-  font-size: 1.1em;
-  color: green;
+  margin-top: 1rem;
+  color: #28a745; /* Success green */
+  font-weight: 500;
 }
 
-/* Additional Text (Login link) */
 .auth-form p {
-  margin-top: 15px;
-  font-size: 0.9em;
+  margin-top: 1.5rem;
+  color: var(--gray);
+  font-size: 0.95rem;
 }
 
-/* Footer Styling */
-footer {
-  background-color: #222;
-  color: white;
-  padding: 15px 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  font-size: 0.9em;
-}
+/* Footer Styling
